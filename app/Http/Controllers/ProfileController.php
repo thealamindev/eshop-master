@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use App\Models\Verification;  
+use App\Models\Verification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
@@ -89,11 +89,7 @@ class ProfileController extends Controller
     // Phone Number Verify
     public function phone_number_verify()
     {
-        // echo auth()->user()->phone_number;
-        // echo auth()->user()->name;
-        //POST Method example
-        // $random =rand(100,200);
-        // echo $random;
+    
 $random =rand(100,200);
 $url = "http://66.45.237.70/api.php";
 $number=auth()->user()->phone_number;
@@ -124,8 +120,7 @@ $sendstatus = $p[0];
 // Phone Number Verify
 public function code_confirm(Request $request){
 
-    // echo $request->code;
-    // echo Verification::where('user_id', auth()->user()->id)->first()->code;
+
 
     if ($request->code==Verification::where('user_id', auth()->user()->id)->first()->code) {
         Verification::where('user_id', auth()->user()->id)->update([
