@@ -12,6 +12,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Profile Routes
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
+Route::get('/service', [App\Http\Controllers\ProfileController::class, 'service'])->name('service');
 Route::post('/profile/photo/upload', [App\Http\Controllers\ProfileController::class, 'profile_photo_upload']);
 Route::post('/profile/cover/upload', [App\Http\Controllers\ProfileController::class, 'profile_cover_upload']);
 Route::post('/password/change', [App\Http\Controllers\ProfileController::class, 'password_change']);
